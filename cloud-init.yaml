@@ -1,4 +1,5 @@
 #cloud-config
+timezone: Utc
 package_upgrade: false
 locale: en_US.UTF-8
 apt:
