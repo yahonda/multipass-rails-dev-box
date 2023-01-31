@@ -277,6 +277,8 @@ packages:
   - mupdf-tools
   - ffmpeg
   - poppler-utils
+  - npm
+  - eslint
 
 hostname: rails-dev-box
 users:
@@ -308,4 +310,5 @@ runcmd:
       GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
       GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
       SQL
+  - npm install eslint-plugin-import@latest --save-dev
 final_message: "all set, rock on!"
