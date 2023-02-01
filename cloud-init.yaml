@@ -252,33 +252,35 @@ apt:
         -----END PGP PUBLIC KEY BLOCK-----
 
 packages:
-  - ruby-full
   - bundler
+  - eslint
+  - ffmpeg
   - git
-  - sqlite3
-  - libsqlite3-dev
-  - memcached
-  - redis-server
-  - rabbitmq-server
-  - postgresql
-  - postgresql-contrib
-  - libpq-dev
+  - imagemagick
   - libmysqlclient-dev
+  - libncurses5-dev
+  - libpq-dev
+  - libsqlite3-dev
   - libssl-dev
+  - libvips
   - libxml2
   - libxml2-dev
   - libxslt1-dev
-  - libncurses5-dev
-  - libvips
-  - nodejs
-  - yarn
-  - imagemagick
+  - libyaml-dev
+  - memcached
   - mupdf
   - mupdf-tools
-  - ffmpeg
-  - poppler-utils
+  - nodejs
   - npm
-  - eslint
+  - pkg-config
+  - poppler-utils
+  - postgresql
+  - postgresql-contrib
+  - rabbitmq-server
+  - redis-server
+  - ruby-full
+  - sqlite3
+  - yarn
 
 hostname: rails-dev-box
 users:
