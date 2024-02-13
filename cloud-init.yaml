@@ -278,7 +278,7 @@ packages:
   - postgresql-contrib
   - rabbitmq-server
   - redis-server
-  - ruby-full
+  - rbenv
   - sqlite3
   - yarn
 
@@ -312,5 +312,9 @@ runcmd:
       GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
       GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
       SQL
-  - npm install eslint-plugin-import@latest --save-dev
+  - sudo -u ubuntu npm install eslint-plugin-import@latest --save-dev
+  - sudo -u ubuntu rbenv install 3.1.2
+  - sudo -u ubuntu rbenv global 3.1.2
+  - sudo -u ubuntu echo 'export PATH=\"$HOME/.rbenv/bin:$PATH\"' >> ~ubuntu/.bashrc
+  - sudo -u ubuntu echo 'eval "$(rbenv init -)"' >> ~ubuntu/.bashrc
 final_message: "all set, rock on!"
