@@ -320,4 +320,5 @@ runcmd:
   - sudo -u ubuntu bash -c 'git clone https://github.com/rbenv/ruby-build.git /home/ubuntu/.rbenv/plugins/ruby-build'
   - sudo -u ubuntu bash -c '/home/ubuntu/.rbenv/bin/rbenv install 3.3.4'
   - sudo -u ubuntu bash -c '/home/ubuntu/.rbenv/bin/rbenv global 3.3.4'
+  - sudo -u ubuntu bash -c 'echo "export MYSQL_SOCK=/var/run/mysqld/mysqld.sock" >> /home/ubuntu/.bashrc'
 final_message: "all set, rock on!"
