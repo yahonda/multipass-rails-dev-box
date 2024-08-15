@@ -287,7 +287,7 @@ users:
   - name: ubuntu
     groups: sudo
     shell: /bin/bash
-    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
 swap:
   filename: /swapfile
   size: "auto" # or size in bytes
@@ -304,14 +304,14 @@ runcmd:
   - echo "mysql-server mysql-server/root_password_again password root" | sudo debconf-set-selections
   - sudo apt-get -y install mysql-server
   - |
-      MYSQL_PWD=root mysql -uroot <<SQL
-      CREATE USER 'rails'@'localhost';
-      CREATE DATABASE activerecord_unittest  DEFAULT CHARACTER SET utf8mb4;
-      CREATE DATABASE activerecord_unittest2 DEFAULT CHARACTER SET utf8mb4;
-      GRANT ALL PRIVILEGES ON activerecord_unittest.* to 'rails'@'localhost';
-      GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
-      GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
-      SQL
+    MYSQL_PWD=root mysql -uroot <<SQL
+    CREATE USER 'rails'@'localhost';
+    CREATE DATABASE activerecord_unittest  DEFAULT CHARACTER SET utf8mb4;
+    CREATE DATABASE activerecord_unittest2 DEFAULT CHARACTER SET utf8mb4;
+    GRANT ALL PRIVILEGES ON activerecord_unittest.* to 'rails'@'localhost';
+    GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
+    GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
+    SQL
   - sudo -u ubuntu npm install eslint-plugin-import@latest --save-dev
   - sudo -u ubuntu rbenv install 3.1.2
   - sudo -u ubuntu rbenv global 3.1.2

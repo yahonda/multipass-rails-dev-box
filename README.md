@@ -6,19 +6,26 @@ You can run rails-dev-box on M1 mac using Multipass.
 
 1. Download [Multipass](https://multipass.run)
 2. Clone this repository
-  ```
-  % git clone https://github.com/yahonda/multipass-rails-dev-box.git
-  % cd multipass-rails-dev-box
-  ```
+
+```
+% git clone https://github.com/yahonda/multipass-rails-dev-box.git
+% cd multipass-rails-dev-box
+```
+
 3. Launch Multipass box
-  ```shell
-  % multipass launch 23.10 --cpus 2 --disk 20G --memory 2G --name rails-dev-box --cloud-init ./cloud-init.yaml --timeout 600
-  ```
+
+```shell
+% multipass launch 23.10 --cpus 2 --disk 20G --memory 2G --name rails-dev-box --cloud-init ./cloud-init.yaml --timeout 600
+```
+
 4. Login to Multipass box
-  ```shell
-  % multipass shell rails-dev-box
-  ```
+
+```shell
+% multipass shell rails-dev-box
+```
+
 5. You can access the "rails-dev-box"
-  ```shell
-  ubuntu@rails-dev-box:~$
-  ```
+
+```shell
+ubuntu@rails-dev-box:~$
+```
