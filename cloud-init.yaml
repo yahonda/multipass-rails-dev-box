@@ -280,6 +280,7 @@ packages:
   - redis-server
   - rbenv
   - sqlite3
+  - tzdata-legacy
   - yarn
 
 hostname: rails-dev-box
