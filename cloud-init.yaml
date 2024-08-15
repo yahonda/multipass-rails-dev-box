@@ -262,7 +262,7 @@ packages:
   - libpq-dev
   - libsqlite3-dev
   - libssl-dev
-  - libvips
+  - libvips-dev
   - libxml2
   - libxml2-dev
   - libxslt1-dev
