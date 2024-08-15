@@ -278,7 +278,6 @@ packages:
   - postgresql-contrib
   - rabbitmq-server
   - redis-server
-  - rbenv
   - sqlite3
   - tzdata-legacy
   - yarn
@@ -314,8 +313,11 @@ runcmd:
     GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
     SQL
   - sudo -u ubuntu npm install eslint-plugin-import@latest --save-dev
-  - sudo -u ubuntu rbenv install 3.3.4
-  - sudo -u ubuntu rbenv global 3.3.4
-  - sudo -u ubuntu echo 'export PATH=\"$HOME/.rbenv/bin:$PATH\"' >> ~ubuntu/.bashrc
-  - sudo -u ubuntu echo 'eval "$(rbenv init -)"' >> ~ubuntu/.bashrc
+  - sudo -u ubuntu bash -c 'cd /home/ubuntu && git clone https://github.com/rbenv/rbenv.git .rbenv'
+  - sudo -u ubuntu bash -c 'echo "export PATH=\"/home/ubuntu/.rbenv/bin:$PATH\"" >> /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'echo "eval \"\$(rbenv init -)\"" >> /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'source /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'git clone https://github.com/rbenv/ruby-build.git /home/ubuntu/.rbenv/plugins/ruby-build'
+  - sudo -u ubuntu bash -c '/home/ubuntu/.rbenv/bin/rbenv install 3.3.4'
+  - sudo -u ubuntu bash -c '/home/ubuntu/.rbenv/bin/rbenv global 3.3.4'
 final_message: "all set, rock on!"
