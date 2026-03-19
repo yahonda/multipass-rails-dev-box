@@ -69,5 +69,14 @@ runcmd:
   - sudo -u ubuntu bash -c '~/.local/bin/mise install ruby@4.0'
   - sudo -u ubuntu bash -c '~/.local/bin/mise use --global ruby@4.0'
   - sudo -u ubuntu bash -c '~/.local/bin/mise use --global yarn@latest'
+  - snap install chromium
+  - ln -s /snap/bin/chromium.chromedriver /usr/local/bin/chromedriver
+  - |
+    cat > /usr/local/bin/selenium-manager << 'EOF'
+    #!/bin/bash
+    echo '{"logs":[],"result":{"driver_path":"/usr/local/bin/chromedriver","browser_path":"/snap/bin/chromium"}}'
+    EOF
+  - chmod +x /usr/local/bin/selenium-manager
   - sudo -u ubuntu bash -c 'echo "export MYSQL_SOCK=/var/run/mysqld/mysqld.sock" >> /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'echo "export SE_MANAGER_PATH=/usr/local/bin/selenium-manager" >> /home/ubuntu/.bashrc'
 final_message: "all set, rock on!"
