@@ -61,6 +61,8 @@ runcmd:
     GRANT ALL PRIVILEGES ON activerecord_unittest.* to 'rails'@'localhost';
     GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
     GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+    FLUSH PRIVILEGES;
     SQL
   - sudo -u ubuntu npm install eslint-plugin-import@latest --save-dev
   - sudo -u ubuntu bash -c 'for i in 1 2 3; do curl https://mise.run | sh && break || sleep 10; done'
@@ -77,6 +79,6 @@ runcmd:
     echo '{"logs":[],"result":{"driver_path":"/usr/local/bin/chromedriver","browser_path":"/snap/bin/chromium"}}'
     EOF
   - chmod +x /usr/local/bin/selenium-manager
-  - sudo -u ubuntu bash -c 'echo "export MYSQL_SOCK=/var/run/mysqld/mysqld.sock" >> /home/ubuntu/.bashrc'
-  - sudo -u ubuntu bash -c 'echo "export SE_MANAGER_PATH=/usr/local/bin/selenium-manager" >> /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'echo "export MYSQL_SOCK=/var/run/mysqld/mysqld.sock" >> /home/ubuntu/.profile'
+  - sudo -u ubuntu bash -c 'echo "export SE_MANAGER_PATH=/usr/local/bin/selenium-manager" >> /home/ubuntu/.profile'
 final_message: "all set, rock on!"
