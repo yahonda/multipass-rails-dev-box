@@ -79,4 +79,5 @@ runcmd:
   - chmod +x /usr/local/bin/selenium-manager
   - sudo -u ubuntu bash -c 'echo "export MYSQL_SOCK=/var/run/mysqld/mysqld.sock" >> /home/ubuntu/.bashrc'
   - sudo -u ubuntu bash -c 'echo "export SE_MANAGER_PATH=/usr/local/bin/selenium-manager" >> /home/ubuntu/.bashrc'
+  - sudo -u ubuntu bash -c 'echo "export SE_MANAGER_PATH=/usr/local/bin/selenium-manager" >> /home/ubuntu/.profile'
 final_message: "all set, rock on!"
