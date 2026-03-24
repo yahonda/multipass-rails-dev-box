@@ -63,7 +63,7 @@ runcmd:
     GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost';
     SQL
   - sudo -u ubuntu npm install eslint-plugin-import@latest --save-dev
-  - sudo -u ubuntu bash -c 'for i in 1 2 3; do curl https://mise.run | sh && break || sleep 10; done'
+  - sudo -u ubuntu bash -c 'for i in 1 2 3; do curl https://mise.run | sh && break || sleep 10; done; test -f ~/.local/bin/mise || exit 1'
   - sudo -u ubuntu bash -c 'grep -qxF "eval \"\$(~/.local/bin/mise activate bash)\"" /home/ubuntu/.bashrc || echo "eval \"\$(~/.local/bin/mise activate bash)\"" >> /home/ubuntu/.bashrc'
   - sudo -u ubuntu bash -c 'grep -qxF "eval \"\$(~/.local/bin/mise activate bash)\"" /home/ubuntu/.profile || echo "eval \"\$(~/.local/bin/mise activate bash)\"" >> /home/ubuntu/.profile'
   - sudo -u ubuntu bash -c '~/.local/bin/mise install ruby@4.0'
